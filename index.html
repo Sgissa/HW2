@@ -29,12 +29,19 @@
         <textarea id="msg" class="inputs-v2" placeholder="Message..."  required></textarea>
     </div>
     <br>
-    <button class="sub-btn">Submit</button>
+    <button class="sub-btn" onclick="
+    const name = document.getElementById('name').value;
+
+    console.log(name)
+
+    document.querySelector('.js-name').innerHTML = name;
+
+    ">Submit</button>
   </form>
 
   <section id="display">
     <div>
-      <h2>Context</h2>
+      <h2 class="header">Context</h2>
       <p class="js-name"></p>
       <p class="js-email"></p>
       <p class="js-msg"></p>
