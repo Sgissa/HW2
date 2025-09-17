@@ -29,24 +29,34 @@
         <textarea id="msg" class="inputs-v2" placeholder="Message..."  required></textarea>
     </div>
     <br>
-    <button class="sub-btn" onclick="
-    const name = document.getElementById('name').value;
-
-    console.log(name)
-
-    document.querySelector('.js-name').innerHTML = name;
-
+    <button type="button" class="sub-btn" onclick="
+      displayInfo()
     ">Submit</button>
   </form>
 
   <section id="display">
     <div>
       <h2 class="header">Context</h2>
-      <p class="js-name"></p>
-      <p class="js-email"></p>
-      <p class="js-msg"></p>
+      <p class="js-name" id="display-name"></p>
+      <p class="js-email" id="display-email"></p>
+      <p class="js-msg" id="display-msg"></p>
     </div>
   </section>
-</body>
+  <script>
+
+    console.log("hello") 
+
+    function displayInfo() {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const msg = document.getElementById('msg').value;
+
+    document.getElementById('display-name').innerHTML = `Name: ${name} `;
+    document.getElementById('display-email').innerHTML = `Email: ${email} `;
+    document.getElementById('display-msg').innerHTML = `Message: ${msg} `;
+
+  }
+  </script>
 </body>
 </html>
